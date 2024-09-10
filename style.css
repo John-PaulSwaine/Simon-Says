@@ -1,0 +1,57 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+#game-buttons {
+    margin: 20px auto;
+}
+
+/* Default styles for game buttons */
+.game-button {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}
+
+/* Assign different background colors to each button */
+#btn1 {
+    background-color: red;
+}
+
+#btn2 {
+    background-color: green;
+}
+
+#btn3 {
+    background-color: blue;
+}
+
+#btn4 {
+    background-color: yellow;
+    color: black; /* For better contrast on yellow background */
+}
+
+#start-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+#status {
+    margin-top: 20px;
+    font-size: 20px;
+    color: red;
+}
+
+/* Add a flashing effect when buttons are active */
+.active {
+    background-color: white !important;  /* Flash to white when active */
+    color: black !important;
+}
