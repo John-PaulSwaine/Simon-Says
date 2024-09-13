@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Simon Says Game</h1>
+    <div id="heading">
+        <h1>Simon Says Game</h1>
+    </div>
 
     <div id="game-buttons">
         <button id="btn1" class="game-button">1</button>
@@ -18,6 +20,14 @@
 
     <button id="start-button">Start Game</button>
     <h2 id="status"></h2>
+
+    <div id="howToPlay">
+        <h2>How To Play</h2>
+        <h4>When pressing the "start game" button, the computer will highlight the same amount of random tiles as the level starting at level 1.</h4>
+        <h4>Once the sequence is complete, you have to repeat it exactly. If you do not then you shall lose one of your 3 lives.</h4>
+        <h4>Upon losing all 3 lives the game is over and you are beaten.</h4>
+        <h4>lives do not recover until page is refreshed or a new game is started.</h4>
+    </div>
 
     <script src="script.js"></script>
 </body>

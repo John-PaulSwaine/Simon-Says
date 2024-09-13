@@ -3,6 +3,18 @@ body {
     font-family: Arial, sans-serif;
     background-color: aqua;
 }
+#heading, #howToPlay {
+    background-color: mediumblue;
+    color: aqua;
+}
+h2 {
+    background-color: mediumslateblue;
+    color: aqua;
+}
+h4 {
+    background-color: mediumvioletred;
+    color: aqua;
+}
 #game-buttons {
     margin: 20px auto;
     background-color: black;
