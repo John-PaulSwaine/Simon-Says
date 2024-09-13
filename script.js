@@ -3,6 +3,7 @@ let playerSequence = [];  // Stores the player's sequence
 let level = 0;            // Tracks the game level
 let buttons = ["btn1", "btn2", "btn3", "btn4"]; // Button IDs
 let playerTurn = false;   // Tracks if it's the player's turn
+let lives = 3;            // Player starts with 3 lives
 
 // Start game logic
 document.getElementById("start-button").addEventListener("click", () => startGame());
@@ -11,7 +12,8 @@ const startGame = () => {
     sequence = [];
     playerSequence = [];
     level = 0;
-    document.getElementById("status").textContent = '';
+    lives = 3; // Reset lives at the start of the game
+    document.getElementById("status").textContent = `Lives: ${lives}`;
     playerTurn = false;
     nextRound();
 };
@@ -20,7 +22,7 @@ const nextRound = () => {
     playerTurn = false;  // Disable player input while showing sequence
     playerSequence = [];
     level++;
-    document.getElementById("status").textContent = `Level ${level}`;
+    document.getElementById("status").textContent = `Level ${level} | Lives: ${lives}`;
 
     // Add a new random button to the sequence
     let randomButton = buttons[Math.floor(Math.random() * buttons.length)];
@@ -69,9 +71,16 @@ buttons.forEach(buttonId => {
 
 const checkPlayerMove = (index) => {
     if (playerSequence[index] !== sequence[index]) {
-        // Player made a mistake
-        document.getElementById("status").textContent = "Game Over! Press Start to play again.";
-        playerTurn = false;
+        // Player made a mistake, lose a life
+        lives--;
+        document.getElementById("status").textContent = `Incorrect! Lives: ${lives}`;
+        
+        if (lives <= 0) {
+            // If no lives left, game over
+            document.getElementById("status").textContent = "Game Over! Press Start to try again.";
+            playerTurn = false;
+            return;
+        }
         return;
     }
 
